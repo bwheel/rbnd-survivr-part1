@@ -1,43 +1,40 @@
 # Survivr, Part 1
 
-## Project Overview
+## Features Overview
 
-The goal of this project is to create your own Ruby gem that will help colorize terminal output. It will consist of a series of color methods like `red()` and `light_blue()` that will alter the color of a Ruby String when it is printed to the terminal.
+Colors for All, and All for Colors!
+	The Colorizr gem will decorate/color your console output
+	in an easy to use manner.
 
-## Completing this Project
+## Usage Instructions
 
-Before submitting, ensure your program has the following:
+To use this gem simply call the color you want after the string you want colored. 
+ex:
+	puts "test text".yellow
+In this example the text "test text" will apprear as yellow text in the console.
 
-* A gemspec file containing
-	* name
-	* version
-	* date
-	* summary
-	* description
-	* authors
-	* files
-* A properly formatted and detailed README explaining your gem's usage and installation
-* Methods for colorizing Strings
-	* red
-	* green
-	* yellow
-	* blue
-	* pink
-	* light_blue
-	* white
-	* light_grey
-	* black
-* A `String.color` method which returns a list of color methods available
-* A `String.sample_colors` method which outputs sample text showcasing all colors
+This gem suppors the following colors.
+* red
+* green
+* yellow
+* blue
+* pink
+* light_blue
+* white
+* light_grey
+* black
 
-This project has no starter code.  You will create all the files and directories from scratch.
+This gem also has two others functions
+String.colors #=> returns a list of supported colors.
+String.sample_colors
 
-## Submitting Your Project
+## Installation Instructions
+To install this gem you must perform the following steps first:
 
-Before submitting your project for evaluation, we recommend that you check that each of the following is true:
+* Download the repository and navigate to root folder of the project.
 
-* Your program runs without any errors
-* You are proud of your project and its output
-* You completed your project according to the instructions
-* You checked your project against the [rubric](https://docs.google.com/document/d/1wDMSU8kVWetHqDXjEkROmUDJyZobnZSyBz-FOfn6kGU/pub)
-* Create a zip file with your project files. For instructions on how to do this, click here. When you feel ready to submit, use the blue 'Submit Project' button below!
+* Install the gem file.
+	gem install colorizr-0.0.2.gem
+
+* Include the gem at the top of your ruby file.
+	require('colorizr')
