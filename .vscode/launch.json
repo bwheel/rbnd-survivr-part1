@@ -6,7 +6,8 @@
       "type": "Ruby",
       "request": "launch",
       "cwd": "${workspaceRoot}",
-      "program": "${workspaceRoot}/lib/colorizer.rb"
+      "program": "${workspaceRoot}/lib/colorizer.rb",
+      "showDebuggerOutput": false
     },
     {
       "name": "Listen for rdebug-ide",
