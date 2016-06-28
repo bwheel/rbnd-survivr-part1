@@ -1,8 +1,5 @@
 class String
-  
-# this function should create a new function for each color.
-  def self.create_colors
-    colors = {
+  @@colors = {
       :red=> 31, 
       :green=> 32, 
       :yellow=> 33, 
@@ -13,37 +10,40 @@ class String
       :light_grey=> 37, 
       :black=> 30
     }
+  
 
-    colors.each do |key_color, value|
-
-       color_func = %Q{
-        def #{key_color}
-          return "\e[#{value}m\#{self}\e[0m"
-        end
-      }
-      String.class_eval(color_func)
-      #String.class_eval do
-      #  def key_color
-      #    return "\e[#{value}m\#{self}\e[0m"
-      #  end
-      #end
+  # this function dynamically adds color functions to 
+  # the String class based on the @@colors hash table.
+  def self.create_colors
+    
+    # foreach color in the table
+    @@colors.each do |key_color, value|
+      # add the color function to the String class.
+      String.send(:define_method, "#{key_color}") do
+        return "\e[#{value}m#{self}\e[0m"
+      end
     end
+
   end
 
-  
+  # returns a list of colors.
   def self.colors
-    @colors.keys
+    @@colors.keys
   end
 
   # this function should call each colors color
   def self.sample_colors
-    @colors.each do |key, value|
-      # TODO: call the class function associated with key.
+    @@colors.each do |key, value|
+      eval("puts \"This is \" << \"#{key}\".#{key}")
     end
   end
 end
+
 String.create_colors
 puts "test".red
 puts "test".green
 puts "test".blue
 puts "test".light_grey
+
+#puts String.colors
+String.sample_colors
