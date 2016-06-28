@@ -1,4 +1,7 @@
 class String
+  
+  # This hash holds the information for creating the dynamic
+  # color methods
   @@colors = {
       :red=> 31, 
       :green=> 32, 
@@ -11,7 +14,6 @@ class String
       :black=> 30
     }
   
-
   # this function dynamically adds color functions to 
   # the String class based on the @@colors hash table.
   def self.create_colors
@@ -23,7 +25,6 @@ class String
         return "\e[#{value}m#{self}\e[0m"
       end
     end
-
   end
 
   # returns a list of colors.
@@ -39,11 +40,11 @@ class String
   end
 end
 
+# Adds the functions to the String class.
 String.create_colors
-puts "test".red
-puts "test".green
-puts "test".blue
-puts "test".light_grey
 
+# Testing below
+# outputs all the colors
 #puts String.colors
-String.sample_colors
+# outputs a sampling of the colors.
+#String.sample_colors
