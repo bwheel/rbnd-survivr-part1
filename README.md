@@ -25,8 +25,10 @@ This gem suppors the following colors.
 * black
 
 This gem also has two others functions
-String.colors #=> returns a list of supported colors.
+String.colors 
+	Returns a list of supported colors.
 String.sample_colors
+	Displays an example of the colors in the console.
 
 ## Installation Instructions
 To install this gem you must perform the following steps first:

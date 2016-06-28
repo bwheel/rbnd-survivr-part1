@@ -1,0 +1,16 @@
+Metaprogramming
+The colorizr gem takes advantage of Ruby's metaprogramming in one way; the creation 
+of the color functions. The library has a hash table of color names and associated 
+codes. Inside the create_colors method the hash table is looped over and a instance 
+method is created for each key, which happens to be the color/method name).
+
+Project duration
+I probably spent 3-4 days, but no more than 2 hours each day. It was 4 hours total.  
+
+Challenge
+The most challenging part was the metaprogramming. There are several ways to do it 
+and it was hard to pick the correct way, and not mix between them.
+
+Growth
+I still need practice with metaprogramming. Conceptually I get it, but it is still
+pretty difficult to implement.
